@@ -43,12 +43,16 @@ class UserInformationFragment : Fragment() {
                 .load(it.image)
                 .placeholder(R.mipmap.ic_launcher)
                 .into(binding.img)
-            binding.name.text = "${it.firstName}   ${it.lastName}"
-            binding.address.text = it.address
-            binding.phoneNumber.text = it.phone
+            binding.name.text = "Name : ${it.firstName}   ${it.lastName}"
+            binding.address.text = "Address : "+it.address
+            binding.phoneNumber.text ="Phone : "+ it.phone
         }
         viewModel.indicator.observe(viewLifecycleOwner){
-            binding.progressCircular.visibility=View.VISIBLE
+            if (it){
+                binding.progressCircular.visibility=View.VISIBLE
+            }else{
+                binding.progressCircular.visibility=View.INVISIBLE
+            }
         }
     }
 
@@ -67,14 +71,9 @@ class UserInformationFragment : Fragment() {
             else -> super.onOptionsItemSelected(item)
         }
     }
-
     companion object {
         @JvmStatic
         fun newInstance() =
-            UserInformationFragment().apply {
-                arguments = Bundle().apply {
-
-                }
-            }
+            UserInformationFragment()
     }
 }

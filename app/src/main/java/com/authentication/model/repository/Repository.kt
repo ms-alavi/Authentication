@@ -9,7 +9,7 @@ import javax.inject.Inject
 
 class Repository @Inject constructor(
     private val remoteRepository: RemoteRepository,
-    private val sharedPreferences: SharedPreferences
+    private val authenticationRepository: SharedPreferences
 ) {
 
 
@@ -23,7 +23,7 @@ class Repository @Inject constructor(
 
     private fun onSuccessfulLogin(credentials: Credentials) {
         TokenContainer.update(credentials.token, credentials.refreshToken)
-        sharedPreferences.edit().apply {
+        authenticationRepository.edit().apply {
             putString("access_token", credentials.token)
             putString("refresh_token", credentials.refreshToken)
         }.apply()
