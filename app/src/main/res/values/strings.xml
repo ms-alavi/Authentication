@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">Authentication</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="user_name">User name</string>
+    <string name="password">Password</string>
+    <string name="submit">Submit</string>
+    <string name="logout">Logout</string>
+    <string name="wait">Wait...</string>
+    <string name="user_is_empty">User is empty!</string>
+    <string name="pass_is_empty">Pass is empty</string>
+    <string name="unauthorized">Unauthorized</string>
+    <string name="check_connection">Check connection !</string>
+</resources>
